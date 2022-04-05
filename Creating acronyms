@@ -1,0 +1,7 @@
+#Creating acronyms
+lst = list(input().split(' '))
+lst2= list()
+for ele in lst:
+    lst2.append(ele[0].upper())
+print(lst2)
+print(''.join(lst2))
