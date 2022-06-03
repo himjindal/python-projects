@@ -1,0 +1,19 @@
+#finding peak in a list
+def peak(i,j,lst):
+    
+    k = int((i+j)/2)
+    
+    if k == 0 or k==j:
+        return k
+    elif int(lst[k])>int(lst[k+1]) and int(lst[k])>int(lst[k-1]):
+        return k
+    elif int(lst[k])<int(lst[k-1]):
+        return peak(0,k-1,lst)
+    elif int(lst[k])<int(lst[k+1]):
+        return peak(k+1,j,lst)
+    else:
+        'No peak'
+
+lst = input().split(',')
+
+print (peak(0,len(lst)-1,lst))
