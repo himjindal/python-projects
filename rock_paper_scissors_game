@@ -1,0 +1,48 @@
+#rock,paper,scissors game
+n = int(input('Number of times we play: '))
+lst = ['rock','paper','scissors']
+comp_score = 0
+your_score = 0
+tie = 0
+for i in range(n):
+    comp_select = random.choice(lst)
+    m = input('Please enter your choice from 1-rock, 2-paper, 3-scissors: ')   
+    if int(m) >3 or int(m)<0:
+        print('Please input from given choices')
+    else:
+        your_select = lst[int(m)-1]
+        #print(your_select)
+        #print(comp_select)
+        if your_select == 'rock' and comp_select == 'rock':
+            print('tie')
+            tie+=1
+        elif your_select == 'rock' and comp_select == 'paper':
+            print('paper beats rock')
+            comp_score+=1
+        elif your_select == 'rock' and comp_select == 'scissors':
+            print('rock beats scissors')
+            your_score+=1
+        elif your_select == 'paper' and comp_select == 'paper':
+            print('tie')
+            tie+=1
+        elif your_select == 'paper' and comp_select == 'rock':
+            print('paper beats rock')
+            your_score+=1
+        elif your_select == 'paper' and comp_select == 'scissors':
+            print('scissors beats paper')
+            comp_score+=1
+        elif your_select == 'scissors' and comp_select == 'scissors':
+            print('tie')
+            tie+=1
+        elif your_select == 'scissors' and comp_select == 'rock':
+            print('rock beats scissors')
+            comp_score+=1
+        elif your_select == 'scissors' and comp_select == 'paper':
+            print('scissors beats paper')
+            your_score+=1
+        else:
+            print('incomprehensible')
+print('Comp_Score: '+ str(comp_score))
+print('Your_Score: '+ str(your_score))
+print('Tie_Score: '+str(tie))
+        
