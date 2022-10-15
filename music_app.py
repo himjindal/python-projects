@@ -2,12 +2,6 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 
-
-import warnings
-warnings.filterwarnings('ignore')
-from sklearn.ensemble import RandomForestClassifier
-model = RandomForestClassifier()
-
 st.title ("Music Recommendation Project")
 
 menu = ["Home","Dataset-Upload Sample Data","Dataset-Upload Test Data"]
