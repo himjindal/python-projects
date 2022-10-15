@@ -1,17 +1,7 @@
-pip install scikit-learn
-pip install matplotlib
 import streamlit as st
 import numpy as np
 import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn import metrics
-from sklearn.metrics import accuracy_score
-import re
-import random
-from sklearn import preprocessing
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.pipeline import Pipeline
-from sklearn.model_selection import GridSearchCV
+
 
 import warnings
 warnings.filterwarnings('ignore')
@@ -20,15 +10,21 @@ model = RandomForestClassifier()
 
 st.title ("Music Recommendation Project")
 
-menu = ["Home","Dataset"]
+menu = ["Home","Dataset-Upload Sample Data","Dataset-Upload Test Data"]
 
 choice = st.sidebar.selectbox("Menu",menu)
 
 if choice == "Home":
   st.subheader("Home")
-elif choice == "Dataset":
-  st.subheader("Dataset")
-  data_uploaded = st.file_uploader("Please upload csv",type=["csv"])
-  if data_uploaded is not none:
-    read_data = pd.read_csv(data_uploaded)
-    st.dataframe(read_data)
+elif choice == "Dataset-Upload Sample Data":
+  st.subheader("Dataset-Upload Sample Data")
+  data_uploaded_sample = st.file_uploader("Please upload sample csv",type=["csv"])
+    if data_uploaded_sample is not none:
+    read_data_sample = pd.read_csv(data_uploaded_sample)
+    df_sample = st.dataframe(read_data_sample)
+elif choice == "Dataset-Upload Test Data":
+  st.subheader("Dataset-Upload Test Data")
+  data_uploaded_test = st.file_uploader("Please upload sample csv",type=["csv"])
+  if data_uploaded_test is not none:
+    read_data_test = pd.read_csv(data_uploaded_test)
+    df_test = st.dataframe(read_data_test)
