@@ -1,6 +1,9 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
+from sklearn.metrics import accuracy_score
+from sklearn.ensemble import RandomForestClassifier
+model = RandomForestClassifier()
 
 st.title ("Music Recommendation Project")
 
