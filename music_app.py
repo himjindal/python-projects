@@ -44,13 +44,13 @@ elif choice == "Dataset":
     
     st.write("Congrats File Uploaded")
     
-if data_uploaded_test is not None:
-  if data_uploaded_sample is not None:
-    model.fit(data_x, data_y)
-    y_pred = model.predict(x_test)
-    accuracy = accuracy_score(data_y, y_pred)
-    st.write("Mean accuracy score between test and sample file: ",accuracy)
-  
-else:
-  st.write("Waiting for the files")
+  if data_uploaded_test is not None:
+    if data_uploaded_sample is not None:
+      model.fit(data_x, data_y)
+      y_pred = model.predict(x_test)
+      accuracy = accuracy_score(data_y, y_pred)
+      st.write("Mean accuracy score between test and sample file: ",accuracy)
+
+  else:
+    st.write("Waiting for the files")
     
