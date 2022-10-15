@@ -49,7 +49,7 @@ elif choice == "Dataset":
   if data_uploaded_test is not None:
     if data_uploaded_sample is not None:
       model.fit(data_x, data_y)
-      y_pred = model.predict(x_test)
+      y_pred = model.predict(df_test)
       df_pred = df_test.append(y_pred)
       st.write("Final predicted dataset")
       data_pred = st.dataframe(df_pred)
