@@ -19,12 +19,10 @@ if choice == "Home":
 elif choice == "Dataset-Upload Sample Data":
   st.subheader("Dataset-Upload Sample Data")
   data_uploaded_sample = st.file_uploader("Please upload sample csv",type=["csv"])
-    if data_uploaded_sample is not none:
-      read_data_sample = pd.read_csv(data_uploaded_sample)
-      df_sample = st.dataframe(read_data_sample)
+  read_data_sample = pd.read_csv(data_uploaded_sample)
+  df_sample = st.dataframe(read_data_sample)
 elif choice == "Dataset-Upload Test Data":
   st.subheader("Dataset-Upload Test Data")
   data_uploaded_test = st.file_uploader("Please upload sample csv",type=["csv"])
-    if data_uploaded_test is not none:
-      read_data_test = pd.read_csv(data_uploaded_test)
-      df_test = st.dataframe(read_data_test)
+  read_data_test = pd.read_csv(data_uploaded_test)
+  df_test = st.dataframe(read_data_test)
