@@ -7,14 +7,14 @@ model = RandomForestClassifier()
 
 st.title ("Music Recommendation Project")
 
-menu = ["Home","Dataset-Upload Sample Data","Dataset-Upload Test Data"]
+menu = ["Home","Dataset"]
 
 choice = st.sidebar.selectbox("Menu",menu)
 
 if choice == "Home":
   st.subheader("Home")
   
-elif choice == "Dataset-Upload Sample Data":
+elif choice == "Dataset":
   st.subheader("Dataset-Upload Sample Data")
   data_uploaded_sample = st.file_uploader("Please upload sample csv",type=["csv"])
   if data_uploaded_sample is not None:
@@ -32,10 +32,10 @@ elif choice == "Dataset-Upload Sample Data":
     st.write("Congrats File Uploaded")
     
 
-    
-elif choice == "Dataset-Upload Test Data":
   st.subheader("Dataset-Upload Test Data")
+  
   data_uploaded_test = st.file_uploader("Please upload test csv",type=["csv"])
+  
   if data_uploaded_test is not None:
     read_data_test = pd.read_csv(data_uploaded_test)
     
@@ -44,10 +44,13 @@ elif choice == "Dataset-Upload Test Data":
     
     st.write("Congrats File Uploaded")
     
+if data_uploaded_test is not None and data_uploaded_sample is not None:
+  model.fit(data_x, data_y)
+  y_pred = model.predict(x_test)
+  accuracy = accuracy_score(data_y, y_pred)
 
-model.fit(data_x, data_y)
-y_pred = model.predict(x_test)
-accuracy = accuracy_score(data_y, y_pred)
-
-st.write("Mean accuracy score between test and sample file: ",accuracy)
+  st.write("Mean accuracy score between test and sample file: ",accuracy)
+  
+else:
+  st.write("Waiting for the files")
     
