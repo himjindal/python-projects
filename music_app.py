@@ -40,4 +40,4 @@ elif choice == "Dataset-Upload Test Data":
     
     st.write("Congrats File Uploaded")
     
-pip install scikit-learn
+from sklearn import datasets
