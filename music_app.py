@@ -39,3 +39,5 @@ elif choice == "Dataset-Upload Test Data":
     df_test = st.dataframe(read_data_test)
     
     st.write("Congrats File Uploaded")
+    
+pip install scikit-learn
