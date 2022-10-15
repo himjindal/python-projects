@@ -17,6 +17,7 @@ elif choice == "Dataset-Upload Sample Data":
   if data_uploaded_sample is not none:
     read_data_sample = pd.read_csv(data_uploaded_sample)
     df_sample = st.dataframe(read_data_sample)
+    st.dataframe(read_data_sample)
     
 elif choice == "Dataset-Upload Test Data":
   st.subheader("Dataset-Upload Test Data")
@@ -24,3 +25,4 @@ elif choice == "Dataset-Upload Test Data":
   if data_uploaded_test is not none:
     read_data_test = pd.read_csv(data_uploaded_test)
     df_test = st.dataframe(read_data_test)
+    st.dataframe(read_data_test)
