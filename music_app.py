@@ -4,4 +4,6 @@ st.title ("Music Recommendation Project")
 
 menu = ["Home","Dataset"]
 
-st.sidebar.selectbox("Menu",menu)
+choice = st.sidebar.selectbox("Menu",menu)
+
+
