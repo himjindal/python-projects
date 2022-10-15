@@ -22,7 +22,6 @@ elif choice == "Dataset-Upload Sample Data":
     data_x = st.dataframe(df_x)
     data_y = st.dataframe(df_y)
     st.write("Congrats File Uploaded")
-    st.write("Shape of your dataset: ",data_x.shape)
     
     
 elif choice == "Dataset-Upload Test Data":
