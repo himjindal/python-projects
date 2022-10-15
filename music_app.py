@@ -31,6 +31,7 @@ elif choice == "Dataset-Upload Sample Data":
     
     st.write("Congrats File Uploaded")
     
+
     
 elif choice == "Dataset-Upload Test Data":
   st.subheader("Dataset-Upload Test Data")
@@ -43,4 +44,10 @@ elif choice == "Dataset-Upload Test Data":
     
     st.write("Congrats File Uploaded")
     
-from sklearn import datasets
+
+model.fit(data_x, data_y)
+y_pred = model.predict(x_test)
+accuracy = accuracy_score(data_y, y_pred)
+
+st.write("Mean accuracy score between test and sample file: ",accuracy)
+    
