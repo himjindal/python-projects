@@ -1,3 +1,5 @@
+import strealit as st
+
 st.title ("Music Recommendation Project")
 
 menu = ['Home','Dataset']
