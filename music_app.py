@@ -13,6 +13,9 @@ choice = st.sidebar.selectbox("Menu",menu)
 
 if choice == "Home":
   st.subheader("Home")
+  st.write("The purpose of this web-app is to predict the output from the test file uploaded, using the sample file provided. This ensures that users can easily use new data and still get insights from data.")
+  st.write("Please note: In Sample data- please ensure you have column labeled target for the app to identify correct X and Y variables."
+  
   
 elif choice == "Dataset":
   st.subheader("Dataset-Upload Sample Data")
