@@ -16,10 +16,13 @@ elif choice == "Dataset-Upload Sample Data":
   data_uploaded_sample = st.file_uploader("Please upload sample csv",type=["csv"])
   if data_uploaded_sample is not None:
     read_data_sample = pd.read_csv(data_uploaded_sample)
-    df_sample = st.dataframe(read_data_sample)
+    df_sample = pd.DataFrame(read_data_sample)
+    df_x = df_sample.drop(columns = ["target"])
+    df_y = df_sample["target"]
+    data_x = st.dataframe(df_x)
+    data_y = st.dataframe(df_y)
     st.write("Congrats File Uploaded")
-    Y_train = df_sample["target"]
-    st.write("Shape of your dataset: ",Y_train.shape)
+    st.write("Shape of your dataset: ",data_x.shape)
     
     
 elif choice == "Dataset-Upload Test Data":
