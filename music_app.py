@@ -1,4 +1,4 @@
-import strealit as st
+import streamlit as st
 
 st.title ("Music Recommendation Project")
 
