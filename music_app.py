@@ -18,9 +18,8 @@ elif choice == "Dataset-Upload Sample Data":
     read_data_sample = pd.read_csv(data_uploaded_sample)
     df_sample = st.dataframe(read_data_sample)
     st.write("Congrats File Uploaded")
-    X_train = df_sample.drop(columns=['target'])
     Y_train = df_sample['target']
-    st.write("Shape of your dataset: ",X_train.shape)
+    st.write("Shape of your dataset: ",Y_train.shape)
     
     
 elif choice == "Dataset-Upload Test Data":
